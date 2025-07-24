@@ -198,7 +198,7 @@ public class ExcelModule
         language ??= Language;
         
         if( language != Language.None )
-            language = Language.ChineseSimplified;
+            language = Language.ChineseTraditional;
 
         ref readonly var definedData = ref DefinedSheetCache.GetValueRefOrNullRef( name );
         SheetData data;
