@@ -196,6 +196,9 @@ public class ExcelModule
     {
         ArgumentNullException.ThrowIfNull( name );
         language ??= Language;
+        
+        if( language != Language.None )
+            language = Language.ChineseSimplified;
 
         ref readonly var definedData = ref DefinedSheetCache.GetValueRefOrNullRef( name );
         SheetData data;
