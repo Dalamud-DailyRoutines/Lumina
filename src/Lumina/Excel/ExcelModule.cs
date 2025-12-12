@@ -196,6 +196,10 @@ public class ExcelModule
     {
         ArgumentNullException.ThrowIfNull( name );
         language ??= Language;
+        
+        // 避免国际服的插件强行获取指定语言数据
+        if( language != Language.None )
+            language = Language;
 
         ref readonly var definedData = ref DefinedSheetCache.GetValueRefOrNullRef( name );
         SheetData data;
