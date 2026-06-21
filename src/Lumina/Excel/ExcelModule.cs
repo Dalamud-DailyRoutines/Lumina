@@ -195,7 +195,7 @@ public class ExcelModule
     private RawExcelSheet GetRawSheetCore( string name, Language? language, out ExcelVariant variant )
     {
         ArgumentNullException.ThrowIfNull( name );
-        language ??= Language;
+        language = Language;
 
         ref readonly var definedData = ref DefinedSheetCache.GetValueRefOrNullRef( name );
         SheetData data;
