@@ -99,8 +99,8 @@ public sealed partial class SeStringBuilder : IResettable
     /// <remarks>
     /// <p>Returned view is invalidated upon any mutation to this builder, including <see cref="Clear"/> and <see cref="Append(string)"/>. If
     /// <see cref="SharedPool"/> is being used, then returning to the pool also will invalidate the returned view.</p>
-    /// <p>After the last element (right after the end of the returned memory/span), <c>NUL</c> is present. You can pin the returned value and use the pointer
-    /// to the first element as a pointer to null-terminated string.</p>
+    /// <p>After the last element (right after the end of the returned memory/span), <c>NUL</c> is present. If non-empty, you can pin the returned value and use the pointer
+    /// to the first element as a pointer to null-terminated string. Pinning an empty view yields <c>null</c>.</p>
     /// </remarks>
     public ReadOnlyMemory< byte > GetViewAsMemory()
     {
